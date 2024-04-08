@@ -26,13 +26,13 @@
                 <div class="product-buttons-wrap">
                     <div class="product-buttons">
                         <div class="product-button">
-                          <a [routerLink]="['/edit-product']" ><i class="fa fa-pencil"></i></a>
+                          <button (click)="editProduct(product)" ><i class="fa fa-pencil"></i></button>
                         </div>
                         <div class="product-button">
-                            <a href="#"><i class="fa fa-trash"></i></a>
+                            <button (click)="deleteProdcut(product)"><i class="fa fa-trash"></i></button>
                         </div>
                         <div class="product-button">
-                            <a href="#"><i class="fa fa-bullseye"></i></a>
+                            <button ><i class="fa fa-bullseye"></i></button>
                         </div>
                     </div>
                 </div>
@@ -41,5 +41,7 @@
     
 </div>
 </div>
-<app-edit-product [product]="ProductToEdit"></app-edit-product>
+<app-edit-product [product]="ProductToEdit" (productUpdate)="updateHeroList($event)"></app-edit-product>
+<router-outlet></router-outlet>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.10.0/feather.js"></script>

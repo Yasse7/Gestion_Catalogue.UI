@@ -1,17 +1,22 @@
 <form *ngIf="product">
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputEmail4">Name</label>
-        <input  [(ngModel)]="product.name" type="Name" class="form-control" id="inputEmail4" placeholder="Email">
-      </div>
-      <div class="form-group col-md-6">
-        <label for="inputPassword4">Description</label>
-        <input [(ngModel)]="product.description" type="description" class="form-control" id="description" placeholder="description">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputAddress">Price</label>
-      <input [(ngModel)]="product.price" type="text" class="form-control" id="Price" placeholder="0.00$">
-    </div>
-    <button (click)="updateproduct(product)" *ngIf="product" type="submit" class="btn btn-primary">Edit</button>
-  </form>
+ 
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="">Name</label>
+    <input  [(ngModel)]="product.name" [ngModelOptions]="{ standalone: true }" type="Name" class="form-control" id="inputEmail4" placeholder="product.name">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="">Description</label>
+    <input [(ngModel)]="product.description" [ngModelOptions]="{ standalone: true }" type="description" class="form-control" id="description" placeholder="description">
+  </div>
+</div>
+<div class="form-group">
+  <label for="">Price</label>
+  <input [(ngModel)]="product.price" [ngModelOptions]="{ standalone: true }" type="text" class="form-control" id="Price" placeholder="0.00$">
+</div>
+<button (click)="createProduct(product)" *ngIf="product.id">Create</button>
+<button (click)="updateproduct(product)" *ngIf="product.id"  class="btn btn-primary">Edit</button>
+
+</form>
+
+<router-outlet></router-outlet>

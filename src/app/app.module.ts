@@ -6,6 +6,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+
+ 
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule 
+    
   ],
   providers: [
     provideClientHydration()
